@@ -31,3 +31,4 @@ __pycache__
 .jython_cache
 Sikuli_java_stderr*.txt
 Sikuli_java_stdout*.txt
+sikuli_captured
