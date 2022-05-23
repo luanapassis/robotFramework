@@ -25,9 +25,9 @@ class pywinauto_base_lib:
 
     @keyword
     def pywinauto_send_keys(self, element, text):
-        celb3 = self.app[element].wait('exists enabled visible ready', timeout=self.timeout)
-        celb3.click_input()
-        celb3.type_keys(text, pause=0.02, with_spaces=True, with_tabs=True, with_newlines=True,
+        control = self.app[element].wait('exists enabled visible ready', timeout=self.timeout)
+        control.click_input()
+        control.type_keys(text, pause=0.02, with_spaces=True, with_tabs=True, with_newlines=True,
                         turn_off_numlock=True)
 
     @keyword
@@ -35,3 +35,8 @@ class pywinauto_base_lib:
         #self.app = self.app.window(title_re=".*Excel")
         #self.app.kill()
         self.app.type_keys("%{F4}")
+
+    @keyword
+    def pywinauto_select_combo(self, element, text):
+        control = self.app[element].wait('exists enabled visible ready', timeout=self.timeout)
+        control.select(text)

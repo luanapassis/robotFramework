@@ -13,21 +13,30 @@ Wait Until elemet selenium custom
     SeleniumLibrary.wait until element is visible   ${locator}  ${TIMEOUT}
     SeleniumLibrary.wait until element is enabled   ${locator}  ${TIMEOUT}
 
+Take screenshot
+    IF    ${SCREENSHOT_EACH_STEP}
+        SeleniumLibrary.Set Screenshot Directory    ${DIR_SCREENSHOT}
+        SeleniumLibrary.Capture Page Screenshot
+    END
+
 Click selenium custom
     [Arguments]  ${locator}
     Wait Until elemet selenium custom    ${locator}
     SeleniumLibrary.click element   ${locator}
+    Take screenshot
 
 Send Keys selenium custom
     [Arguments]  ${locator}  ${text}
     Wait Until elemet selenium custom    ${locator}
     SeleniumLibrary.input text  ${locator}  ${text}
+    Take screenshot
 
 Get Text selenium custom
     [Arguments]  ${locator}
     Wait Until elemet selenium custom    ${locator}
     ${result}   SeleniumLibrary.get text    ${locator}
     [return]    ${result}
+    Take screenshot
 
 
 #----- ações do sikuli -----#

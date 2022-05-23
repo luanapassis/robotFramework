@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.2 on win32)" generated="20220523 15:45:08.883" rpa="false" schemaversion="3">
+<suite id="s1" name="Login Tests" source="C:\Automacao\AutomacoesLuana\rpa\robotFramework\tests\login_tests.robot">
+<test id="s1-t1" name="Realizar login no Mantis com insucesso" line="18">
+<kw name="Abrir o browser" library="test_base" type="SETUP">
+<arg>${url}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220523 15:45:13.484" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220523 15:45:13.484" endtime="20220523 15:45:14.936"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220523 15:45:14.937" level="INFO">Opening url 'https://mantis-prova.base2.com.br/login_page.php'</msg>
+<status status="PASS" starttime="20220523 15:45:14.936" endtime="20220523 15:45:18.561"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:13.484" endtime="20220523 15:45:18.561"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${mensagemEsperada}</var>
+<arg>Your account may be disabled or blocked or the username/password you entered is incorrect.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220523 15:45:18.562" level="INFO">${mensagemEsperada} = Your account may be disabled or blocked or the username/password you entered is incorrect.</msg>
+<status status="PASS" starttime="20220523 15:45:18.562" endtime="20220523 15:45:18.562"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${mensagemParcial}</var>
+<arg>disabled</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220523 15:45:18.563" level="INFO">${mensagemParcial} = disabled</msg>
+<status status="PASS" starttime="20220523 15:45:18.563" endtime="20220523 15:45:18.563"/>
+</kw>
+<kw name="Digitar usuario &quot;${USUARIO}&quot;" library="login_page" sourcename="Digitar usuario &quot;${usuario}&quot;">
+<kw name="Send Keys selenium custom" library="page_base">
+<arg>${USER_FIELD}</arg>
+<arg>${usuario}</arg>
+<kw name="Wait Until elemet selenium custom" library="page_base">
+<arg>${locator}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220523 15:45:18.566" endtime="20220523 15:45:18.582"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220523 15:45:18.582" endtime="20220523 15:45:18.600"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220523 15:45:18.600" endtime="20220523 15:45:18.632"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:18.565" endtime="20220523 15:45:18.647"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220523 15:45:18.648" level="INFO">Typing text 'testeUsuario' into text field 'name=username'.</msg>
+<status status="PASS" starttime="20220523 15:45:18.647" endtime="20220523 15:45:18.768"/>
+</kw>
+<kw name="Take screenshot" library="page_base">
+<if>
+<branch type="IF" condition="${SCREENSHOT_EACH_STEP}">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${DIR_SCREENSHOT}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220523 15:45:18.769" endtime="20220523 15:45:18.770"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220523 15:45:18.916" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-33.png"&gt;&lt;img src="screenshots/selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220523 15:45:18.770" endtime="20220523 15:45:18.916"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:18.769" endtime="20220523 15:45:18.916"/>
+</branch>
+<status status="PASS" starttime="20220523 15:45:18.769" endtime="20220523 15:45:18.916"/>
+</if>
+<status status="PASS" starttime="20220523 15:45:18.768" endtime="20220523 15:45:18.916"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:18.565" endtime="20220523 15:45:18.916"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:18.564" endtime="20220523 15:45:18.916"/>
+</kw>
+<kw name="Digitar senha" library="login_page">
+<arg>${SENHA}</arg>
+<kw name="Send Keys selenium custom" library="page_base">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${senha}</arg>
+<kw name="Wait Until elemet selenium custom" library="page_base">
+<arg>${locator}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220523 15:45:18.916" endtime="20220523 15:45:18.932"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220523 15:45:18.932" endtime="20220523 15:45:18.949"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220523 15:45:18.949" endtime="20220523 15:45:18.981"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:18.916" endtime="20220523 15:45:18.981"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220523 15:45:18.981" level="INFO">Typing text 'testeSenha' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20220523 15:45:18.981" endtime="20220523 15:45:19.079"/>
+</kw>
+<kw name="Take screenshot" library="page_base">
+<if>
+<branch type="IF" condition="${SCREENSHOT_EACH_STEP}">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${DIR_SCREENSHOT}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220523 15:45:19.080" endtime="20220523 15:45:19.081"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220523 15:45:19.178" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-34.png"&gt;&lt;img src="screenshots/selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220523 15:45:19.081" endtime="20220523 15:45:19.178"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:19.080" endtime="20220523 15:45:19.178"/>
+</branch>
+<status status="PASS" starttime="20220523 15:45:19.080" endtime="20220523 15:45:19.178"/>
+</if>
+<status status="PASS" starttime="20220523 15:45:19.079" endtime="20220523 15:45:19.178"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:18.916" endtime="20220523 15:45:19.178"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:18.916" endtime="20220523 15:45:19.178"/>
+</kw>
+<kw name="Clicar no botao login" library="login_page">
+<kw name="Click selenium custom" library="page_base">
+<arg>${SUBMIT_BUTTON}</arg>
+<kw name="Wait Until elemet selenium custom" library="page_base">
+<arg>${locator}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220523 15:45:19.180" endtime="20220523 15:45:19.182"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220523 15:45:19.182" endtime="20220523 15:45:19.213"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220523 15:45:19.213" endtime="20220523 15:45:19.229"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:19.179" endtime="20220523 15:45:19.229"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220523 15:45:19.245" level="INFO">Clicking element 'class=button'.</msg>
+<status status="PASS" starttime="20220523 15:45:19.229" endtime="20220523 15:45:19.717"/>
+</kw>
+<kw name="Take screenshot" library="page_base">
+<if>
+<branch type="IF" condition="${SCREENSHOT_EACH_STEP}">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${DIR_SCREENSHOT}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220523 15:45:19.720" endtime="20220523 15:45:19.721"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220523 15:45:19.832" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-35.png"&gt;&lt;img src="screenshots/selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220523 15:45:19.721" endtime="20220523 15:45:19.832"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:19.719" endtime="20220523 15:45:19.832"/>
+</branch>
+<status status="PASS" starttime="20220523 15:45:19.719" endtime="20220523 15:45:19.832"/>
+</if>
+<status status="PASS" starttime="20220523 15:45:19.718" endtime="20220523 15:45:19.832"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:19.179" endtime="20220523 15:45:19.832"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:19.179" endtime="20220523 15:45:19.832"/>
+</kw>
+<kw name="Retornar mensagem de erro" library="login_page">
+<var>${mensagemRecebida}</var>
+<kw name="Get Text selenium custom" library="page_base">
+<var>${result}</var>
+<arg>${ERRO_MSG}</arg>
+<kw name="Wait Until elemet selenium custom" library="page_base">
+<arg>${locator}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220523 15:45:19.832" endtime="20220523 15:45:19.852"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220523 15:45:19.852" endtime="20220523 15:45:19.873"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220523 15:45:19.873" endtime="20220523 15:45:19.902"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:19.832" endtime="20220523 15:45:19.902"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${result}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220523 15:45:19.924" level="INFO">${result} = Your account may be disabled or blocked or the username/password you entered is incorrect.</msg>
+<status status="PASS" starttime="20220523 15:45:19.902" endtime="20220523 15:45:19.924"/>
+</kw>
+<kw name="Take screenshot" library="page_base">
+<if>
+<branch type="IF" condition="${SCREENSHOT_EACH_STEP}">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${DIR_SCREENSHOT}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220523 15:45:19.925" endtime="20220523 15:45:19.925"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220523 15:45:20.017" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-36.png"&gt;&lt;img src="screenshots/selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220523 15:45:19.925" endtime="20220523 15:45:20.017"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:19.924" endtime="20220523 15:45:20.017"/>
+</branch>
+<status status="PASS" starttime="20220523 15:45:19.924" endtime="20220523 15:45:20.017"/>
+</if>
+<status status="PASS" starttime="20220523 15:45:19.924" endtime="20220523 15:45:20.017"/>
+</kw>
+<msg timestamp="20220523 15:45:20.018" level="INFO">${result} = Your account may be disabled or blocked or the username/password you entered is incorrect.</msg>
+<status status="PASS" starttime="20220523 15:45:19.832" endtime="20220523 15:45:20.018"/>
+</kw>
+<msg timestamp="20220523 15:45:20.018" level="INFO">${mensagemRecebida} = Your account may be disabled or blocked or the username/password you entered is incorrect.</msg>
+<status status="PASS" starttime="20220523 15:45:19.832" endtime="20220523 15:45:20.018"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${mensagemRecebida}</arg>
+<arg>${mensagemEsperada}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220523 15:45:20.018" endtime="20220523 15:45:20.019"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${mensagemRecebida}</arg>
+<arg>${mensagemParcial}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220523 15:45:20.019" endtime="20220523 15:45:20.020"/>
+</kw>
+<kw name="Fechar o browser" library="test_base" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220523 15:45:20.021" endtime="20220523 15:45:22.177"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:20.020" endtime="20220523 15:45:22.177"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:13.484" endtime="20220523 15:45:22.177"/>
+</test>
+<test id="s1-t2" name="Realizar login no Mantis com susucesso" line="29">
+<kw name="Abrir o browser" library="test_base" type="SETUP">
+<arg>${url}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220523 15:45:22.177" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220523 15:45:22.177" endtime="20220523 15:45:23.432"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220523 15:45:23.433" level="INFO">Opening url 'https://mantis-prova.base2.com.br/login_page.php'</msg>
+<status status="PASS" starttime="20220523 15:45:23.432" endtime="20220523 15:45:27.074"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:22.177" endtime="20220523 15:45:27.074"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${mensagemEsperada}</var>
+<arg>Your account may be disabled or blocked or the username/password you entered is incorrect.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220523 15:45:27.076" level="INFO">${mensagemEsperada} = Your account may be disabled or blocked or the username/password you entered is incorrect.</msg>
+<status status="PASS" starttime="20220523 15:45:27.075" endtime="20220523 15:45:27.076"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${mensagemParcial}</var>
+<arg>disabled</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220523 15:45:27.077" level="INFO">${mensagemParcial} = disabled</msg>
+<status status="PASS" starttime="20220523 15:45:27.077" endtime="20220523 15:45:27.077"/>
+</kw>
+<kw name="Digitar usuario &quot;${USUARIO}&quot;" library="login_page" sourcename="Digitar usuario &quot;${usuario}&quot;">
+<kw name="Send Keys selenium custom" library="page_base">
+<arg>${USER_FIELD}</arg>
+<arg>${usuario}</arg>
+<kw name="Wait Until elemet selenium custom" library="page_base">
+<arg>${locator}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220523 15:45:27.079" endtime="20220523 15:45:27.093"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220523 15:45:27.093" endtime="20220523 15:45:27.114"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220523 15:45:27.114" endtime="20220523 15:45:27.149"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:27.079" endtime="20220523 15:45:27.149"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220523 15:45:27.149" level="INFO">Typing text 'testeUsuario' into text field 'name=username'.</msg>
+<status status="PASS" starttime="20220523 15:45:27.149" endtime="20220523 15:45:27.249"/>
+</kw>
+<kw name="Take screenshot" library="page_base">
+<if>
+<branch type="IF" condition="${SCREENSHOT_EACH_STEP}">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${DIR_SCREENSHOT}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220523 15:45:27.249" endtime="20220523 15:45:27.249"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220523 15:45:27.388" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-37.png"&gt;&lt;img src="screenshots/selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220523 15:45:27.249" endtime="20220523 15:45:27.389"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:27.249" endtime="20220523 15:45:27.389"/>
+</branch>
+<status status="PASS" starttime="20220523 15:45:27.249" endtime="20220523 15:45:27.389"/>
+</if>
+<status status="PASS" starttime="20220523 15:45:27.249" endtime="20220523 15:45:27.389"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:27.078" endtime="20220523 15:45:27.389"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:27.077" endtime="20220523 15:45:27.389"/>
+</kw>
+<kw name="Digitar senha" library="login_page">
+<arg>${SENHA}</arg>
+<kw name="Send Keys selenium custom" library="page_base">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${senha}</arg>
+<kw name="Wait Until elemet selenium custom" library="page_base">
+<arg>${locator}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220523 15:45:27.391" endtime="20220523 15:45:27.391"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220523 15:45:27.391" endtime="20220523 15:45:27.422"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220523 15:45:27.422" endtime="20220523 15:45:27.450"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:27.391" endtime="20220523 15:45:27.450"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220523 15:45:27.450" level="INFO">Typing text 'testeSenha' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20220523 15:45:27.450" endtime="20220523 15:45:27.550"/>
+</kw>
+<kw name="Take screenshot" library="page_base">
+<if>
+<branch type="IF" condition="${SCREENSHOT_EACH_STEP}">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${DIR_SCREENSHOT}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220523 15:45:27.551" endtime="20220523 15:45:27.551"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220523 15:45:27.638" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-38.png"&gt;&lt;img src="screenshots/selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220523 15:45:27.552" endtime="20220523 15:45:27.639"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:27.551" endtime="20220523 15:45:27.639"/>
+</branch>
+<status status="PASS" starttime="20220523 15:45:27.550" endtime="20220523 15:45:27.639"/>
+</if>
+<status status="PASS" starttime="20220523 15:45:27.550" endtime="20220523 15:45:27.639"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:27.390" endtime="20220523 15:45:27.639"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:27.390" endtime="20220523 15:45:27.639"/>
+</kw>
+<kw name="Clicar no botao login" library="login_page">
+<kw name="Click selenium custom" library="page_base">
+<arg>${SUBMIT_BUTTON}</arg>
+<kw name="Wait Until elemet selenium custom" library="page_base">
+<arg>${locator}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220523 15:45:27.641" endtime="20220523 15:45:27.650"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220523 15:45:27.650" endtime="20220523 15:45:27.666"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220523 15:45:27.666" endtime="20220523 15:45:27.697"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:27.641" endtime="20220523 15:45:27.697"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220523 15:45:27.697" level="INFO">Clicking element 'class=button'.</msg>
+<status status="PASS" starttime="20220523 15:45:27.697" endtime="20220523 15:45:28.161"/>
+</kw>
+<kw name="Take screenshot" library="page_base">
+<if>
+<branch type="IF" condition="${SCREENSHOT_EACH_STEP}">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${DIR_SCREENSHOT}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220523 15:45:28.163" endtime="20220523 15:45:28.164"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220523 15:45:28.272" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-39.png"&gt;&lt;img src="screenshots/selenium-screenshot-39.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220523 15:45:28.164" endtime="20220523 15:45:28.272"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:28.163" endtime="20220523 15:45:28.272"/>
+</branch>
+<status status="PASS" starttime="20220523 15:45:28.162" endtime="20220523 15:45:28.272"/>
+</if>
+<status status="PASS" starttime="20220523 15:45:28.162" endtime="20220523 15:45:28.273"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:27.640" endtime="20220523 15:45:28.273"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:27.639" endtime="20220523 15:45:28.273"/>
+</kw>
+<kw name="Retornar mensagem de erro" library="login_page">
+<var>${mensagemRecebida}</var>
+<kw name="Get Text selenium custom" library="page_base">
+<var>${result}</var>
+<arg>${ERRO_MSG}</arg>
+<kw name="Wait Until elemet selenium custom" library="page_base">
+<arg>${locator}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220523 15:45:28.274" endtime="20220523 15:45:28.274"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220523 15:45:28.274" endtime="20220523 15:45:28.305"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220523 15:45:28.305" endtime="20220523 15:45:28.337"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:28.274" endtime="20220523 15:45:28.337"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${result}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220523 15:45:28.363" level="INFO">${result} = Your account may be disabled or blocked or the username/password you entered is incorrect.</msg>
+<status status="PASS" starttime="20220523 15:45:28.337" endtime="20220523 15:45:28.363"/>
+</kw>
+<kw name="Take screenshot" library="page_base">
+<if>
+<branch type="IF" condition="${SCREENSHOT_EACH_STEP}">
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${DIR_SCREENSHOT}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220523 15:45:28.363" endtime="20220523 15:45:28.364"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220523 15:45:28.454" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-40.png"&gt;&lt;img src="screenshots/selenium-screenshot-40.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220523 15:45:28.364" endtime="20220523 15:45:28.454"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:28.363" endtime="20220523 15:45:28.454"/>
+</branch>
+<status status="PASS" starttime="20220523 15:45:28.363" endtime="20220523 15:45:28.454"/>
+</if>
+<status status="PASS" starttime="20220523 15:45:28.363" endtime="20220523 15:45:28.454"/>
+</kw>
+<msg timestamp="20220523 15:45:28.454" level="INFO">${result} = Your account may be disabled or blocked or the username/password you entered is incorrect.</msg>
+<status status="PASS" starttime="20220523 15:45:28.274" endtime="20220523 15:45:28.454"/>
+</kw>
+<msg timestamp="20220523 15:45:28.455" level="INFO">${mensagemRecebida} = Your account may be disabled or blocked or the username/password you entered is incorrect.</msg>
+<status status="PASS" starttime="20220523 15:45:28.274" endtime="20220523 15:45:28.455"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${mensagemRecebida}</arg>
+<arg>${mensagemEsperada}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220523 15:45:28.455" endtime="20220523 15:45:28.455"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${mensagemRecebida}</arg>
+<arg>${mensagemParcial}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220523 15:45:28.456" endtime="20220523 15:45:28.456"/>
+</kw>
+<kw name="Fechar o browser" library="test_base" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220523 15:45:28.458" endtime="20220523 15:45:30.604"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:28.457" endtime="20220523 15:45:30.604"/>
+</kw>
+<status status="PASS" starttime="20220523 15:45:22.177" endtime="20220523 15:45:30.604"/>
+</test>
+<status status="PASS" starttime="20220523 15:45:08.883" endtime="20220523 15:45:30.604"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Login Tests">Login Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

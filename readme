@@ -1,0 +1,7 @@
+robot -T -d "./reports" tests/login_tests.robot
+
+ --timestampoutputs (-T)
+ --report (-r)
+ --log (-l)
+--reporttitle
+--outputdir (-d) Geral, para todos os outputs

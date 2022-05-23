@@ -22,9 +22,9 @@ Abrir o app desktop
 
 
 #----- ações do sikuli -----#
-Carrega imagens do sikuli
+Carregar imagens do sikuli
     [Arguments]         ${path}
     SikuliLibrary.Add Image Path  ${path}
 
-Finaliza sessao do sikuli
+Finalizar sessao do sikuli
     SikuliLibrary.Stop Remote Server

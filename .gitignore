@@ -29,6 +29,7 @@ __pycache__
 .classpath
 .settings
 .jython_cache
+reports
 Sikuli_java_stderr*.txt
 Sikuli_java_stdout*.txt
 sikuli_captured
