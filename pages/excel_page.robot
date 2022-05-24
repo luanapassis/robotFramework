@@ -13,7 +13,7 @@ ${FORMATAR_NUMERO_OPTIONS}  Formatar Número da Célula||Button
 ${ALINHAMENTO_ABA}          Alinhamento||TabItem
 ${COMBO_ALINHAMENTO}        Horizontal:||ComboBox  Centro
 ${OK_BUTTON}                OK||Button
-
+${QUEBRA_TEXTO_BUTTON}      Quebrar Texto Automaticamente||Button
 
 
 *** Keywords ***
@@ -28,6 +28,21 @@ Clicar botao novo documento
 Digitar valor na celcula B3
     [Arguments]          ${text}
     pywinauto_send_keys  ${CELL_B3}  ${text}
+
+Oter Celular especifica
+    [Arguments]          ${coluna}  ${linha}
+    ${celula}=  Set Variable  \"${coluna}\" ${linha}||DataItem
+    [return]  ${celula}
+
+Digitar valor na celula especifica
+    [Arguments]          ${linha}  ${coluna}  ${text}
+    ${celula}=   Oter Celular especifica  ${coluna}  ${linha}
+    pywinauto_send_keys  ${celula}  ${text}
+
+Clicar na celula especifica
+    [Arguments]          ${linha}  ${coluna}
+    ${celula}=   Oter Celular especifica  ${coluna}  ${linha}
+    pywinauto click  ${celula}
 
 Clicar nao salvar documento
     pywinauto click  ${NAO_SALVAR_DOC}
@@ -57,4 +72,7 @@ Selecionar combo de alinhamento
 
 Selecionar ok tela de alinhamento
     pywinauto click  ${OK_BUTTON}
+
+Clicar em quebrar texto automaticamente
+    pywinauto click  ${QUEBRA_TEXTO_BUTTON}
 

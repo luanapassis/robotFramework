@@ -3,8 +3,6 @@
 *** Settings ***
 Resource            ../bases/test_base.robot
 Resource            ../pages/excel_page.robot
-Library             ../libs/pywinauto/pywinauto_base_lib.py
-Library             ../libs/pyautogui/pyautogui_lib.py
 
 Test Setup          Carregar imagens do sikuli  ${EXECDIR}/images/excel
 Suite Teardown      Finalizar sessao do sikuli
