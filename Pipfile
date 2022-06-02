@@ -7,10 +7,16 @@ name = "pypi"
 robotframework = "*"
 robotframework-seleniumlibrary = "*"
 pyautogui = "*"
-webdrivermanager = "*"
 pillow = "*"
 pywinauto = "*"
 robotframework-sikulilibrary = "*"
+webdrivermanager = "*"
+robotframework-databaselibrary = "*"
+pyodbc = "*"
+pymysql = "*"
+pymssql = "*"
+robotframework-requests = "*"
+robotframework-jsonlibrary = "*"
 
 [dev-packages]
 

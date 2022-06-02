@@ -13,19 +13,16 @@ ${ERRO_MSG}                 xpath=//*[contains (text(), 'disabled')]
 # Ações
 
 Digitar usuario "${usuario}"
-    #Input Text          ${USER_FIELD}     ${usuario}
-    Send Keys selenium custom   ${USER_FIELD}     ${usuario}
+    Selenium send Keys custom  ${USER_FIELD}     ${usuario}
 
 Digitar senha
     [Arguments]         ${senha}
-    #Input Text          ${PASSWORD_FIELD}     ${senha}
-    Send Keys selenium custom   ${PASSWORD_FIELD}     ${senha}
+    Selenium send Keys custom   ${PASSWORD_FIELD}     ${senha}
 
 Clicar no botao login
-    #Click Element       ${SUBMIT_BUTTON}
-    Click selenium custom  ${SUBMIT_BUTTON}
+    Selenium click custom  ${SUBMIT_BUTTON}
 
 Retornar mensagem de erro
-    ${result}  Get Text selenium custom            ${ERRO_MSG}
+    ${result}  Selenium get text custom   ${ERRO_MSG}
     [return]  ${result}
 

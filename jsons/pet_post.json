@@ -1,0 +1,18 @@
+{
+  "id": 8899,
+  "category": {
+    "id": 1,
+    "name": "doguinho"
+  },
+  "name": "cheetara",
+  "photoUrls": [
+    "http://fotos.com.br"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "dachshund"
+    }
+  ],
+  "status": "sold"
+}

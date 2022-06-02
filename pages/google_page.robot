@@ -12,9 +12,9 @@ ${COTACAO_FIELD}                xpath=//*[@class='DFlfde SwHCTb']
 
 Pesquisar no google
     [Arguments]          ${text}
-    Send Keys selenium custom   ${PESQUISA_FIELD}     ${text}
-    Click selenium custom   ${PESQUISAR_BUTTON}
+    Selenium send Keys custom   ${PESQUISA_FIELD}     ${text}
+    Selenium click custom   ${PESQUISAR_BUTTON}
 
 Obter dados da cotacao
-    ${retorno_cotacao}  get text selenium custom    ${COTACAO_FIELD}
+    ${retorno_cotacao}  Selenium get text custom    ${COTACAO_FIELD}
     [return]  ${retorno_cotacao}

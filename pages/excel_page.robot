@@ -1,5 +1,5 @@
 *** Settings ***
-Library             ../libs/pywinauto/pywinauto_base_lib.py
+
 Resource            ../bases/page_base.robot
 Library             SikuliLibrary
 
@@ -20,59 +20,66 @@ ${QUEBRA_TEXTO_BUTTON}      Quebrar Texto Automaticamente||Button
 # Ações
 
 Clicar botao novo
-    pywinauto_click  ${BTN_NOVO}
+    pywinauto click custom  ${BTN_NOVO}
 
 Clicar botao novo documento
-    pywinauto_click  ${BTN_NOVO_DOC}
+    pywinauto click custom  ${BTN_NOVO_DOC}
 
 Digitar valor na celcula B3
     [Arguments]          ${text}
-    pywinauto_send_keys  ${CELL_B3}  ${text}
+    pywinauto send keys custom  ${CELL_B3}  ${text}
 
-Oter Celular especifica
+Obter Celular especifica
     [Arguments]          ${coluna}  ${linha}
     ${celula}=  Set Variable  \"${coluna}\" ${linha}||DataItem
     [return]  ${celula}
 
 Digitar valor na celula especifica
     [Arguments]          ${linha}  ${coluna}  ${text}
-    ${celula}=   Oter Celular especifica  ${coluna}  ${linha}
-    pywinauto_send_keys  ${celula}  ${text}
+    ${celula}=   Obter Celular especifica  ${coluna}  ${linha}
+    pywinauto send keys custom  ${celula}  ${text}
 
 Clicar na celula especifica
     [Arguments]          ${linha}  ${coluna}
-    ${celula}=   Oter Celular especifica  ${coluna}  ${linha}
-    pywinauto click  ${celula}
+    ${celula}=   Obter Celular especifica  ${coluna}  ${linha}
+    pywinauto click custom  ${celula}
 
 Clicar nao salvar documento
-    pywinauto click  ${NAO_SALVAR_DOC}
+    pywinauto click custom  ${NAO_SALVAR_DOC}
 
 Clicar nao salvar documento usando sikuli
-    Click sikuli custom     nao_salvar_button.png
+    Sikuli click custom     nao_salvar_button.png
 
 Clicar em formatacao condicional sikuli
-    Click sikuli custom     formatacao_condicional_button.PNG
+    Sikuli click custom    formatacao_condicional_button.PNG
 
 Clicar no texto
     [Arguments]          ${text}
-    Click on text sikuli custom  ${text}
-
-Fechar aplicacao
-    pywinauto_close_application
+    Sikuli click on text custom  ${text}
 
 Selecinar formatar numero options
-    pywinauto click  ${FORMATAR_NUMERO_OPTIONS}
+    pywinauto click custom  ${FORMATAR_NUMERO_OPTIONS}
 
 Selecinar aba de alinhamento
-    pywinauto click  ${ALINHAMENTO_ABA}
+    pywinauto click custom  ${ALINHAMENTO_ABA}
 
 Selecionar combo de alinhamento
     [Arguments]  ${text}
-    pywinauto select combo  ${COMBO_ALINHAMENTO}  ${text}
+    pywinauto select combo custom  ${COMBO_ALINHAMENTO}  ${text}
 
 Selecionar ok tela de alinhamento
-    pywinauto click  ${OK_BUTTON}
+    pywinauto click custom  ${OK_BUTTON}
 
 Clicar em quebrar texto automaticamente
-    pywinauto click  ${QUEBRA_TEXTO_BUTTON}
+    pywinauto click custom  ${QUEBRA_TEXTO_BUTTON}
 
+Fluxo com Pyautogui
+    #não é boa prática incluir valores na page nem construir fluxos completos, mas é só um teste
+    pyautogui click coordenadas custom   ${21}   ${747}
+    pyautogui send keys custom  excel
+    pyautogui press custom  enter
+    pyautogui seleep custom  ${5}
+    pyautogui press custom  ["ctrl", "n"]
+    pyautogui press custom  enter
+    pyautogui seleep custom  ${5}
+    pyautogui click imagem custom  ${EXECDIR}/images/excel/formatacao_condicional_button.PNG
