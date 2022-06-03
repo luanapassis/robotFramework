@@ -32,4 +32,3 @@ Buscar cotacao e salvar no excel
 
     #todo
     #mais conexões com o banco
-    #criar jenkins file

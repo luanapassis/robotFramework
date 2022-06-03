@@ -83,3 +83,4 @@ Fluxo com Pyautogui
     pyautogui press custom  enter
     pyautogui seleep custom  ${5}
     pyautogui click imagem custom  ${EXECDIR}/images/excel/formatacao_condicional_button.PNG
+    pyautogui seleep custom  ${5}
