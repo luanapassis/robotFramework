@@ -13,12 +13,6 @@ node ("meupc"){
 				checkout scm
 			}
 		}
-		echo 'passo 2'
-		stage('Executar scripts') {
-			
-			bat 'call c:'
-			bat 'call cd C:\\Automacao\\AutomacoesLuana\\rpa\\robotFramework'
-			bat 'C:\\Users\\luanaAssis\\.virtualenvs\\robotFramework-_5z0GN7G\\Scripts\\robot.exe -T -d "./reports" scripts'
-		}
+		
 		
 	}	
