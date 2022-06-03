@@ -31,4 +31,5 @@ Buscar cotacao e salvar no excel
     #Finalizar sessao do sikuli
 
     #todo
-    #camada de api
+    #mais conexões com o banco
+    #criar jenkins file

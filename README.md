@@ -6,6 +6,8 @@
 
 * Sikulilibrary
 
+* RequestsLibrary
+
 <h3> Libraries Robot: </h3>
 
 * Pywinauto
@@ -36,6 +38,7 @@ de sistemas Web, Desktop e interações com o sistema operacial.
 * Documentação do Pyautogui: https://pyautogui.readthedocs.io/en/latest/
 * Documentação do Sikuli Library: http://rainmanwy.github.io/robotframework-SikuliLibrary/doc/SikuliLibrary.html
 * Documentação do Selenium Library: https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
+* Documentação do Requests Library: https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html
 
 ---------------------------------------------------
 <h3> Atualização do Driver do navegador: </h3>
