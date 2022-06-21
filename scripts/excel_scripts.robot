@@ -10,9 +10,9 @@ Test Setup          Carregar imagens do sikuli  ${EXECDIR}/images/excel
 *** Test Cases ***
 
 
-Abre o excel com pyautogui
-    Fluxo com Pyautogui
-    Fechar aplicacao com pyautogui  Excel.exe
+#Abre o excel com pyautogui
+#    Fluxo com Pyautogui
+#    Fechar aplicacao com pyautogui  Excel.exe
 
 Abre o excel com pywinauto
     Abrir o app desktop  C:/Program Files/Microsoft Office/root/Office16/EXCEL.EXE      .*Excel

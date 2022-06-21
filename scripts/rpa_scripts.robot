@@ -31,4 +31,5 @@ Buscar cotacao e salvar no excel
     #Finalizar sessao do sikuli
 
     #todo
+    #varios browser ok
     #mais conexões com o banco

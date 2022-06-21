@@ -42,15 +42,22 @@ de sistemas Web, Desktop e interações com o sistema operacial.
 
 ---------------------------------------------------
 <h3> Atualização do Driver do navegador: </h3>
-webdrivermanager chrome 
+
+webdrivermanager firefox --linkpath  C:\caminho do projeto
+
+webdrivermanager chrome --linkpath  C:\caminho do projeto
+
+webdrivermanager opera --linkpath  C:\caminho do projeto
+
+Edge e Ie recomenda-se o download manual
 
 ---------------------------------------------------
 <h3> Execução dos testes por linha de comando: </h3>
 
-* **robot -T -d "./reports" tests** : Executa todos os testes contidos no diretório tests
+* **robot -T -d "./reports" scripts** : Executa todos os testes contidos no diretório scripts
 
-* **robot -T -d "./reports" tests/excel_tests.robot** : Executa uma classe de teste específica.
+* **robot -T -d "./reports" scripts/excel_scripts.robot** : Executa uma classe de scripts específica.
 
 
 * O parametro -T (--timestampoutputs) gera o nome do relatório nativo do Robot com data e hora da execução.
-* O parametro -d (--outputdir) define um diretório para todos os artefatos gerados na execução dos testes.
+* O parametro -d (--outputdir) define um diretório para todos os artefatos gerados na execução dos scripts.

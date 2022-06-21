@@ -17,6 +17,7 @@ pymysql = "*"
 pymssql = "*"
 robotframework-requests = "*"
 robotframework-jsonlibrary = "*"
+rpaframework = "*"
 
 [dev-packages]
 

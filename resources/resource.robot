@@ -1,7 +1,8 @@
 *** Variables ***
 
 #browser padrao
-${BROWSER}  chrome
+${BROWSER}  ie
+##chrome  firefox   ie
 
 #variaveis da page_base
 ${TIMEOUT}  50
