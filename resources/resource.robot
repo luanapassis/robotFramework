@@ -1,7 +1,7 @@
 *** Variables ***
 
 #browser padrao
-${BROWSER}  ie
+${BROWSER}  chrome
 ##chrome  firefox   ie
 
 #variaveis da page_base

@@ -18,6 +18,7 @@ pymssql = "*"
 robotframework-requests = "*"
 robotframework-jsonlibrary = "*"
 rpaframework = "*"
+robotframework-datadriver = "*"
 
 [dev-packages]
 

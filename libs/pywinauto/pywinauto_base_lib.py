@@ -1,5 +1,6 @@
 from pywinauto.application import Application
 from robot.api.deco import keyword, library
+import time
 
 
 @library
@@ -21,7 +22,9 @@ class pywinauto_base_lib:
 
     @keyword()
     def pywinauto_click(self, element):
+        time.sleep(1.0)
         control = self.app[element].wait('exists enabled visible ready', timeout=self.timeout)
+        time.sleep(0.5)
         control.click_input()
 
     @keyword

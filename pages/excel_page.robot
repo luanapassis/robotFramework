@@ -48,10 +48,10 @@ Clicar nao salvar documento
     pywinauto click custom  ${NAO_SALVAR_DOC}
 
 Clicar nao salvar documento usando sikuli
-    Sikuli click custom     nao_salvar_button.png
+    Sikuli click custom     /excel/nao_salvar_button.png
 
 Clicar em formatacao condicional sikuli
-    Sikuli click custom    formatacao_condicional_button.PNG
+    Sikuli click custom    /excel/formatacao_condicional_button.PNG
 
 Clicar no texto
     [Arguments]          ${text}
@@ -85,3 +85,12 @@ Fluxo com Pyautogui
     #pyautogui click imagem custom  ${EXECDIR}/images/excel/formatacao_condicional_button.PNG
     Clicar em formatacao condicional sikuli
     pyautogui seleep custom  ${5}
+
+
+Fluxo com sikuly
+    Sikuli click custom  /excel/novo_button.png
+    Sikuli click custom  /excel/novo_planilha_button.png
+    Sikuli click on cordinates custom   539   151   0    0
+    Sikuli click on cordinates custom   682   283   0    0
+    Sikuli click on text custom  Centro
+    Sikuli click custom  /excel/ok_button.png

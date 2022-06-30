@@ -6,8 +6,8 @@ Resource    ../bases/page_base.robot
 ${HOME_URL}                 https://mantis-prova.base2.com.br/login_page.php
 ${USER_FIELD}               name=username
 ${PASSWORD_FIELD}           name=password
-${SUBMIT_BUTTON}            class=button
-${ERRO_MSG}                 xpath=//*[contains (text(), 'disabled')]
+${SUBMIT_BUTTON}            xpath=//*[@type='submit']
+${ERRO_MSG}                 xpath=//*[@class='alert alert-danger']/p
 
 *** Keywords ***
 # Ações

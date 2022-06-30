@@ -64,6 +64,12 @@ Sikuli click on text custom
     SikuliLibrary.Click Text  ${text}
     Sikuli Take screenshot custom
 
+
+Sikuli click on cordinates custom
+    [Arguments]  ${x}   ${y}   ${w}    ${h}
+    ${coor}	 Create List	${x}   ${y}   ${w}    ${h}
+    SikuliLibrary.Click Region  ${coor}
+
 #----- ações do pywinauto -----#
 pywinauto click custom
     [Arguments]  ${locator}

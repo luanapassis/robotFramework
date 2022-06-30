@@ -12,30 +12,21 @@ Resource            ../resources/resource.robot
 Test Setup       Abrir o browser  ${url}
 Test Teardown    Fechar o browser
 
+Test Template       Realizar login com data driven
 
-*** Test Cases ***
+*** Test Cases ***        USUARIO           SENHA
+Faz login incorreto       Joao              senha do joao
+Faz login correto         Maria             senha da maria
 
-Realizar login no Mantis com insucesso
+*** Keywords ***
+Realizar login com data driven
+    [Arguments]    ${usuario}   ${senha}
     ${mensagemEsperada}=  Set Variable  Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.
     ${mensagemParcial}=  Set Variable  desativada
-    Digitar usuario "${USUARIO}"
+    Digitar usuario "${usuario}"
     Clicar no botao login
-    Digitar senha  ${SENHA}
+    Digitar senha  ${senha}
     Clicar no botao login
     ${mensagemRecebida}=  Retornar mensagem de erro
     Should be equal    ${mensagemRecebida}    ${mensagemEsperada}
     Should_contain  ${mensagemRecebida}  ${mensagemParcial}
-
-
-Realizar login no Mantis com susucesso
-    ${mensagemEsperada}=  Set Variable  Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.
-    ${mensagemParcial}=  Set Variable  desativada
-    Digitar usuario "${USUARIO}"
-    Clicar no botao login
-    Digitar senha  ${SENHA}
-    Clicar no botao login
-    ${mensagemRecebida}=  Retornar mensagem de erro
-    Should be equal    ${mensagemRecebida}    ${mensagemEsperada}
-    Should_contain  ${mensagemRecebida}  ${mensagemParcial}
-
-
